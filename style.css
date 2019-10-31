@@ -1,7 +1,14 @@
 body{
     background-color: #003A70;
     margin-top: 5vh;
-    display: grid;
-    align-content: top;
-    
+    display: inline-block;
+    vertical-align:
+  }
+ 
+img{
+    height: 100%;
+    width: 100%;
+}
+#container{
+    vertical-align: middle;;
 }
