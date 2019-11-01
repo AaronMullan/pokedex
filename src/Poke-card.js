@@ -2,7 +2,7 @@ import Component from '../Component.js';
 
 class PokeCard extends Component {
     renderHTML() {
-        return`
+        return `
         <div class="poke-box">
                 <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png" alt="venusaur">
                 <h2 class="pokemon">Venusaur</h2>
@@ -12,5 +12,5 @@ class PokeCard extends Component {
                 </div>
             </div>`;
     }
-    }
-    export default PokeCard;
+}
+export default PokeCard;
