@@ -1,5 +1,5 @@
-import Component from '../Component.js';
-import Header from './Header.js';
+// import Component from '../Component.js';
+// import Header from './Header.js';
 // import Footer from './Footer.js';
 // import PokeCard from './Poke-card.js';
 // import PokeInfo from './Poke-info.js';
