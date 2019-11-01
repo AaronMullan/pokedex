@@ -2,7 +2,7 @@ import Component from '../Component.js';
 
 class PokeInfo extends Component {
     renderHTML() {
-        return`
+        return `
         <div class="poke-info">
                 <h2 class="pokemon">Venusaur</h2>
                 <div id="poke-info">
@@ -13,5 +13,5 @@ class PokeInfo extends Component {
         </div>
         `;
     }
-    }
-    export default PokeInfo;
+}
+export default PokeInfo;
