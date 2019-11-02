@@ -1,8 +1,9 @@
 import Component from '../Component.js';
 import Header from './Header.js';
-// import Options from './Options.js';
+import Options from './Options.js';
 import PokeList from './PokeList.js';
 import { getPokemon } from '../services/pokemon-api.js';
+
 
 
 class PokedexApp extends Component {
@@ -25,11 +26,9 @@ class PokedexApp extends Component {
         
         pokeList.update({ pokemen });
 
-        
-
-        // const optionsSection = new Options();
-        // optionsSection.appendChild(optionsSection.renderDom('.options-section'));
-        
+        const options = new Options();
+        const optionsDOM = options.renderDOM();
+        dom.prepend(optionsDOM);
     }
 
     renderHTML() {
