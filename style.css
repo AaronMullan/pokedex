@@ -1,8 +1,8 @@
 body {
     display: grid;
     grid-template-rows: 80px 1fr 80px;
-    height: 100vh;
-    border: 10px solid #2967b1;
+    /* height: 100vh;
+    border: 10px solid #2967b1; */
     background-color: #d75755;
 }
 
@@ -45,6 +45,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 4fr;
     padding-top: 20px;
+    
 }
 
 .side-bar {

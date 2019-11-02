@@ -1,5 +1,18 @@
+.header {
+    overflow: hidden;
+    background-color: #d75755;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    font-family: 'Lato', sans-serif;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    height: 10%;
+    border-radius: .5em;
+}
+
 header{
-    height: 20%;
+    height: 10%;
+    
 }
 
 body{
@@ -12,6 +25,7 @@ body{
 img{
     height: 100%;
     width: 100%;
+    padding-top: 30%;
 }
 #container{
     vertical-align: middle;;
