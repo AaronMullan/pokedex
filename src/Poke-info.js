@@ -14,4 +14,5 @@ class PokeInfo extends Component {
         `;
     }
 }
+
 export default PokeInfo;
