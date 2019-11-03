@@ -14,6 +14,8 @@ body {
 }
 
 .header {
+    grid-column-start: 1;
+    grid-column-end: 3;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     height: 80px;
@@ -44,14 +46,17 @@ body {
 .main-content {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 1fr;
     padding-top: 20px;
     
 }
 
-.side-bar {
+.options-section {
     display: flex;
     flex-direction: column;
-    background-color: #262422;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: #87cdf2;
     margin-left: 10px;
     margin-top: 10px;
     border-radius: 2em;
@@ -61,6 +66,7 @@ body {
 
 
 .poke-grid {
+    grid-column-start: 2;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     grid-gap: 20px;
@@ -165,9 +171,7 @@ h2 {
     
 }
 
-.options-section{
-    background: #87cdf2
-}
+
 
 /* @media only screen and (min-width: 500px) {
     .poke-grid {

@@ -9,6 +9,10 @@ import { getPokemon } from '../services/pokemon-api.js';
 class PokedexApp extends Component {
 
     async onRender(dom){
+        const options = new Options();
+        const optionsDOM = options.renderDOM();
+        dom.prepend(optionsDOM);
+        
         const header = new Header();
         const headerDOM = header.renderDOM();
         dom.prepend(headerDOM);
@@ -26,15 +30,13 @@ class PokedexApp extends Component {
         
         pokeList.update({ pokemen });
 
-        const options = new Options();
-        const optionsDOM = options.renderDOM();
-        dom.prepend(optionsDOM);
+        
     }
 
     renderHTML() {
         return /*html*/ `
     
-        <div>
+        <div id="container">
 
             <!--Header goes here  -->
 
