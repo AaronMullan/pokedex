@@ -1,6 +1,6 @@
 body {
     display: grid;
-    grid-template-rows: 80px 1fr 80px;
+    grid-template-rows: 1fr 1fr 80px;
     /* height: 100vh;
     border: 10px solid #2967b1; */
     background-color: #d75755;
@@ -165,7 +165,9 @@ h2 {
     
 }
 
-
+.options-section{
+    background: #87cdf2
+}
 
 /* @media only screen and (min-width: 500px) {
     .poke-grid {

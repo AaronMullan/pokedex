@@ -1,5 +1,5 @@
 import Component from '../Component.js';
-import Pokeinfo from './Poke-info.js';
+import PokeInfo from './Poke-info.js';
 
 
 class Options extends Component {
