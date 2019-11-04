@@ -1,59 +1,56 @@
 import Component from '../Component.js';
 import Header from './Header.js';
-import Options from './Options.js';
+import SearchOptions from './SearchOptions.js';
+import Paging from './Paging.js';
 import PokeList from './PokeList.js';
 import { getPokemon } from '../services/pokemon-api.js';
 
 
-
 class PokedexApp extends Component {
 
-    async onRender(dom){
-        const options = new Options();
-        const optionsDOM = options.renderDOM();
-        dom.prepend(optionsDOM);
-        
+    async onRender(dom) {
         const header = new Header();
-        const headerDOM = header.renderDOM();
-        dom.prepend(headerDOM);
+        dom.prepend(header.renderDOM());
 
-        const response = await getPokemon();
-        const pokemen = response.results;
-        
-        const props = { pokemen };
-
-        const pokeList = new PokeList(props);
-        const pokeListDOM = pokeList.renderDOM();
+        const optionsSection = dom.querySelector('.options-section');
+        const searchOptions = new SearchOptions();
+        optionsSection.prepend(searchOptions.renderDOM());
 
         const listSection = dom.querySelector('.list-section');
-        listSection.appendChild(pokeListDOM);
-        
-        pokeList.update({ pokemen });
+        const paging = new Paging();
+        listSection.appendChild(paging.renderDOM());
 
-        
+        const pokeList = new PokeList({ pokemons: [] });
+        listSection.appendChild(pokeList.renderDOM());
+
+        const pokemons = await getPokemon();
+        const results = pokemons.results;
+
+        pokeList.update({ pokemons: results });
     }
 
     renderHTML() {
-        return /*html*/ `
-    
-        <div id="container">
+        return /*html*/`
+            <div class="page-content">
+            
+                <!-- header goes here -->
+                
+                <main>
+                    <section class="options-section">
+                        <!-- search options go here -->
+                    </section>
+                        
+                    <section class="list-section">
+                        <!-- paging goes here -->
+ 
 
-            <!--Header goes here  -->
+                        <!-- poke-list goes here -->        
 
-            <main>
-                <section class="options-section">
-                <!--Options/Filter goes here-->
-                </section>
-                <section class="list-section">
-                <!--Card gallery goes here-->
-                </section>
-
-            </main>
-
-        </div>
+                    </section>
+                </main>
+            </div>
         `;
     }
-
 }
 
 export default PokedexApp;

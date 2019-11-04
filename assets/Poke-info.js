@@ -2,9 +2,7 @@ import Component from '../Component.js';
 
 class PokeInfo extends Component {
     renderHTML() {
-        
-        const pokemen = this.props.pokemen;
-        return `
+        return /*html*/`
         <div class="poke-info">
                 <h2 class="pokemon">Venusaur</h2>
                 <div id="poke-info">
