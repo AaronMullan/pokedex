@@ -36,17 +36,17 @@ class PokedexApp extends Component {
                 <!-- header goes here -->
                 
                 <main>
-                    <section class="options-section">
+                    <div class="options-section">
                         <!-- search options go here -->
-                    </section>
+                    </div>
                         
-                    <section class="list-section">
+                    <div class="list-section">
                         <!-- paging goes here -->
  
 
                         <!-- poke-list goes here -->        
 
-                    </section>
+                    </div>
                 </main>
             </div>
         `;
