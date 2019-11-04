@@ -5,48 +5,53 @@ import Paging from './Paging.js';
 import PokeList from './PokeList.js';
 import { getPokemon } from '../services/pokemon-api.js';
 
-
 class PokedexApp extends Component {
 
-    async onRender(dom) {
+    onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
 
         const optionsSection = dom.querySelector('.options-section');
         const searchOptions = new SearchOptions();
         optionsSection.prepend(searchOptions.renderDOM());
-
+        
         const listSection = dom.querySelector('.list-section');
-        const paging = new Paging();
+        const paging = new Paging({ totalResults: 0 });
         listSection.appendChild(paging.renderDOM());
 
         const pokeList = new PokeList({ pokemons: [] });
         listSection.appendChild(pokeList.renderDOM());
 
-        const pokemons = await getPokemon();
-        const results = pokemons.results;
+        async function loadPokemon() {
+            const response = await getPokemon();
+            const pokemon = response.Search;
+            const totalResults = response.totalResults;
+            pokeList.update({ pokemon: pokemon });
+            paging.update({ totalResults: totalResults });
+        }
 
-        pokeList.update({ pokemons: results });
+        loadPokemon();
+
+        window.addEventListener('hashchange', () => {
+            loadPokemon();
+        });
     }
 
     renderHTML() {
         return /*html*/`
-            <div class="page-content">
-            
+            <div>
                 <!-- header goes here -->
                 
                 <main>
-                    <div class="options-section">
-                        <!-- search options go here -->
-                    </div>
+                    <section class="options-section">
+                        <!-- options go here -->
+                    </section>
                         
-                    <div class="list-section">
+                    <section class="list-section">
                         <!-- paging goes here -->
  
-
-                        <!-- poke-list goes here -->        
-
-                    </div>
+                        <!-- quote list goes here -->        
+                    </section>
                 </main>
             </div>
         `;

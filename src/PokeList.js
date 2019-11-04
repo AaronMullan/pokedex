@@ -1,7 +1,6 @@
 import Component from '../Component.js';
 import PokeItem from './PokeItem.js';
 
-
 class PokeList extends Component {
     
     onRender(dom) {
