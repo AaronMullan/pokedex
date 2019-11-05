@@ -1,5 +1,5 @@
-import Component from '../Component.js';
-import PokeItem from './PokeItem.js';
+import Component from '../Component.js/index.js';
+import PokeItem from './PokeItem.js.js';
 
 
 class PokeList extends Component {

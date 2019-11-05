@@ -1,8 +1,8 @@
-import Component from '../Component.js';
-import Header from './Header.js';
-import SearchOptions from './SearchOptions.js';
-import Paging from './Paging.js';
-import PokeList from './PokeList.js';
+import Component from '../Component.js/index.js';
+import Header from './Header.js.js';
+import SearchOptions from './SearchOptions.js.js';
+import Paging from './Paging.js.js';
+import PokeList from './PokeList.js.js';
 import { getPokemon } from '../services/pokemon-api.js';
 
 
