@@ -11,7 +11,7 @@ class HomeApp extends Component {
         <div id="container">
             <!-- header goes here -->
             <main> 
-                <a href="pokedex.html" ><img src="../images/pokemon-logo-smaller.svg" class="animated flipInX"  alt="POKEMON LOGO"></a>
+                <a href="pokedex.html" ><img src="../public/images/pokemon-logo-smaller.svg" class="animated flipInX"  alt="POKEMON LOGO"></a>
             </main>
         </div>
         `;

@@ -1,4 +1,4 @@
-import Component from '../Component.js/index.js';
+import Component from '../Component.js';
 
 class SearchOptions extends Component {
 
