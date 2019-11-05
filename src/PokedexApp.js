@@ -3,7 +3,7 @@ import Header from './Header.js';
 import SearchOptions from './SearchOptions.js';
 import Paging from './Paging.js';
 import PokeList from './PokeList.js';
-import { getPokemon } from '../services/pokemon-api.js';
+import { getPokemon } from '../data/data.pokemon.js';
 
 class PokedexApp extends Component {
 
@@ -24,10 +24,10 @@ class PokedexApp extends Component {
 
         async function loadPokemon() {
             const response = await getPokemon();
-            const pokemon = response.Search;
-            const totalResults = response.totalResults;
-            pokeList.update({ pokemon: pokemon });
-            paging.update({ totalResults: totalResults });
+            const pokemon = response.results;
+            const count = response.count;
+            pokeList.update({ pokemons: pokemon });
+            paging.update({ count: count });
         }
 
         loadPokemon();

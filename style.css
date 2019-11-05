@@ -1,6 +1,7 @@
 body {
     border: 10px solid #2967b1;
     background-color: #d75755;
+    min-height: 100vh;
 }
 
 header {

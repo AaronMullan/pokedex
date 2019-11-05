@@ -10,9 +10,9 @@ class SearchOptions extends Component {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
 
-            searchInput.value = searchParams.get('s') || '';
+            searchInput.value = searchParams.get('pokemon') || '';
 
-            const type = searchParams.get('/types');
+            const type = searchParams.get('type_1');
             if (type) {
                 typeRadios.forEach(typeRadio => {
                     typeRadio.checked = typeRadio.value === type;
@@ -33,8 +33,10 @@ class SearchOptions extends Component {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
 
-            // searchParams.set('type', formData.get('type'));
-            searchParams.set('pokemon', formData.get('search'));
+            searchParams.delete('pokemon');
+            searchParams.delete('type_1');
+            searchParams.delete('hp');
+            searchParams.set(formData.get('type'), formData.get('search'));
             searchParams.set('page', 1);
 
             window.location.hash = searchParams.toString();
@@ -52,16 +54,16 @@ class SearchOptions extends Component {
                 </p>
                 <fieldset class="type">
                     <label>
-                        <input type="radio" name="type" value="name" checked>
+                        <input type="radio" name="type" value="pokemon" checked>
                         Name
                     </label>
                     <label>
-                        <input type="radio" name="type" value="type">
+                        <input type="radio" name="type" value="type_1">
                         Type
                     </label>
                     <label>
-                        <input type="radio" name="type" value="attack">
-                        Attack
+                        <input type="radio" name="type" value="hp">
+                        HP
                     </label>
                 </fieldset>
                 <p>
