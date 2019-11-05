@@ -11,10 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/AaronMullan/pokedex.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AaronMullan/pokedex/issues"
   },
-  "homepage": "https://github.com/AaronMullan/pokedex#readme"
+  "homepage": "https://github.com/AaronMullan/pokedex#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "save": "^2.4.0"
+  }
 }
